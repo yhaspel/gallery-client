@@ -1,0 +1,34 @@
+.gallery-container {
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.selected-image-container {
+    position: relative;
+    width: calc(100vw - 220px);
+    height: calc(100vh - 300px);
+    background-color: aliceblue;
+    .author {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: 32px;
+    }
+    img {
+        width: inherit;
+        height: inherit;
+    }
+}
+
+.carousel-container {
+    width: calc(100vw - 220px);
+    height: calc(100vh - 300px);
+}

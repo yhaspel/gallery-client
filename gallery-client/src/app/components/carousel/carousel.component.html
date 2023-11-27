@@ -1,0 +1,9 @@
+<div class="carousel">
+    <div class="left" (click)="handlePrevious()">&#x2B98;</div>
+    <div class="images-container" #imagesContainer>
+        <div *ngFor="let image of images" class="image-container" [id]="'image-' + image.id" (click)="handleSelect(image.id)">
+            <img [src]="image.download_url" alt="no-image" [width]="width" height="height">
+        </div>
+    </div>
+    <div class="right" (click)="handleNext()">&#x2B9A;</div>
+</div>
