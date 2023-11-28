@@ -1,9 +1,9 @@
-<div class="carousel">
-    <div class="left" (click)="handlePrevious()">&#x2B98;</div>
-    <div class="images-container" #imagesContainer>
-        <div *ngFor="let image of images" class="image-container" [id]="'image-' + image.id" (click)="handleSelect(image.id)">
-            <img [src]="image.download_url" alt="no-image" [width]="width" height="height">
+<p-carousel [value]="images? images : []" [numVisible]="3" [numScroll]="3" [circular]="false" [showIndicators]="false">
+    <ng-template let-slide pTemplate="item">
+        <div class="image-container" (click)="handleImageSelection(slide.id)">
+            <div>
+                <img [src]="'https://picsum.photos/id/' + slide.id + '/200/200'" [alt]="'no image'" class="w-6 shadow-2" />
+            </div>
         </div>
-    </div>
-    <div class="right" (click)="handleNext()">&#x2B9A;</div>
-</div>
+    </ng-template>
+</p-carousel>

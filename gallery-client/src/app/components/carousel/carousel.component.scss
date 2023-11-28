@@ -1,36 +1,12 @@
-$image-width: 220px;
-$image-height: 180px;
-
-.carousel {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    justify-items: center;
-    .left, .right {
-        color: red;
-        justify-self: center;
-        align-self: center;
-        cursor: pointer;
-        font-size: 42px;
+:host ::ng-deep p-carousel {
+    .p-carousel-next, .p-carousel-prev {
+      border: none;
+      width: 100px;
+      height: 200px;
+      cursor: pointer;
     }
-    .images-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        justify-items: center;
-        width: calc($image-width * 3);
-        border: 3px solid pink;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        cursor: pointer;
+  }
 
-        .image-container {
-            width: $image-width;
-            height: $image-height;
-            img {
-                width: inherit;
-                height: inherit;
-            }
-        }
-    }
-}
+  .image-container {
+    cursor: pointer;
+  }

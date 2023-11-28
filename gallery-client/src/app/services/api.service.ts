@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Image } from '../models/image';
 import { Observable } from 'rxjs';
 
-const imagesUrl = 'https://picsum.photos/v2/list?page=1&limit=100';
+const imagesUrl = 'https://picsum.photos/v2/list?page=1&limit=10';
 
 @Injectable({
   providedIn: 'root'

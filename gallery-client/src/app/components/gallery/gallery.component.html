@@ -1,6 +1,6 @@
 <div class="gallery-container">
     <div class="selected-image-container">
-        <img [src]="selectedImage?.download_url" alt="no selected image">
+        <img [src]="'https://picsum.photos/id/' + selectedImage?.id + '/1000/700'" alt="no selected image">
         <div class="author">Author: {{selectedImage?.author}}</div>
     </div>
     <div class="carousel-container">

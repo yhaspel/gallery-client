@@ -2,8 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { Image } from '../../models/image';
-import { CarouselComponent } from "../carousel/carousel.component";
 import { Observable, Subscription, map, of, tap } from 'rxjs';
+import { CarouselComponent } from '../carousel/carousel.component';
 
 @Component({
     selector: 'app-gallery',
@@ -21,7 +21,9 @@ export class GalleryComponent implements OnInit, OnDestroy {
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    this.images$ = this.api.getImages();
+    this.images$ = this.api.getImages().pipe(tap((images: Image[]) => {
+      this.selectedImage = images[2];
+    }));
   }
 
   ngOnDestroy(): void {
