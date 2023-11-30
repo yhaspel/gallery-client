@@ -12,10 +12,10 @@ $image-height: 180px;
 }
 
 .selected-image-container {
-    position: relative;
-    // width: calc($image-width * 3 - 220px);
     width: calc(100% - 220px);
     height: calc(100% - 300px);
+    max-width: 1024px;
+    position: relative;
     background-color: aliceblue;
     .author {
         position: absolute;
@@ -41,4 +41,6 @@ $image-height: 180px;
 .carousel-container {
     width: calc(100% - 220px);
     height: calc(100% - 300px);
+    max-width: 1024px;
 }
+
