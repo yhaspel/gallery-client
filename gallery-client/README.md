@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
 
+Client-Side implementation of the Gallery Exam
+![image](https://github.com/yhaspel/gallery-client/assets/19342975/d540b5fb-86b2-470a-a538-e9efeaf6eb17)
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
