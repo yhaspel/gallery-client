@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { Image } from '../../models/image';
@@ -13,7 +13,7 @@ import { CarouselComponent } from '../carousel/carousel.component';
     providers: [ApiService],
     imports: [CommonModule, CarouselComponent]
 })
-export class GalleryComponent implements OnInit, OnDestroy {
+export class GalleryComponent implements OnInit {
   images$: Observable<Image[]> = of([]);
   selectedImage: Image | undefined;
   sub: Subscription | undefined;
@@ -21,21 +21,13 @@ export class GalleryComponent implements OnInit, OnDestroy {
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    this.images$ = this.api.getImages().pipe(tap((images: Image[]) => {
-      this.selectedImage = images[2];
-    }));
-  }
-
-  ngOnDestroy(): void {
-    this.sub?.unsubscribe();
+    this.images$ = this.api.getImages();
   }
 
   handleImageSelection(imageId: number) {
-    console.warn('selected image id >>>', imageId);
     this.sub = this.images$.pipe(
       map(res => res.find(image => image.id === imageId)),
       tap((image: Image | undefined) => {
-        console.warn('image', image);
         this.selectedImage = image;
       })
     ).subscribe();

@@ -16,10 +16,10 @@ export class CarouselComponent implements OnInit {
   @Output() imageSelected = new EventEmitter<number>();
 
   ngOnInit(): void {
+    console.log('Images:', this.images);
   }
   
   handleImageSelection(imageId: number) {
-    console.warn('selectedImageId', imageId);
     this.imageSelected.emit(imageId);
   }
 }

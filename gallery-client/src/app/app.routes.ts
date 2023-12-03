@@ -3,7 +3,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 
 export const routes: Routes = [
     {
-        path: '',
+        path: 'gallery',
         component: GalleryComponent
     }
 ];
